@@ -1,17 +1,7 @@
-your-access-token='PUT A BOT TOKEN HERE' 
-matthew_id = "FIND YOUR WEBEX TEAMS PERSONID AND PUT IT HERE"
-
 # wiring diagram for LED
 # https://www.instructables.com/id/Raspberry-Pi-3-RGB-LED-With-Using-PWM/
 
-#modules to load
 import time
-from picamera import PiCamera
-from webexteamssdk import WebexTeamsAPI
-
-#set up camera
-camera = PiCamera()
-camera.rotation = 180 #options are 0,90,180,270
 
 # set up for RGB LEDs
 import RPi.GPIO as GPIO
@@ -28,16 +18,16 @@ GREEN=GPIO.PWM(green,Freq)
 BLUE=GPIO.PWM(blue,Freq)
 
 
-
+from webexteamssdk import WebexTeamsAPI
 
 #make sure to replace with a permanent bot token later
-api=WebexTeamsAPI(access_token=your-access-token)
+api=WebexTeamsAPI(access_token='your_bot_token')
 
 person= api.people.me()
 print (person.status,person.displayName)
 
 
-
+matthew_id = "your_personId_on_webex"
 api.people.get(personId=matthew_id).status
 
 try:
@@ -49,22 +39,26 @@ try:
 			GREEN.start(1)
 			RED.start(100)
 			BLUE.start(100)
+			time.sleep (60)
 		elif status == "call":
 			print "he's on a call! ORANGE"
 			GREEN.start(85)
 			RED.start(1)
 			BLUE.start(100)
+			time.sleep (60)
 		elif status == "inactive":
-			print "inactive - turn off light"
+			print "inactive - BLUE"
 			GREEN.start(100)
 			RED.start(100)
-			BLUE.start(100)
+			BLUE.start(20)
+			time.sleep (180)
 		else:
 			print "don't bug him! RED"
 			GREEN.start(100)
 			RED.start(1)
-			BLUE.start(100)		
-		time.sleep (55)
+			BLUE.start(100)	
+			time.sleep (60)
+
 
 except KeyboardInterrupt:
 	RED.stop()
@@ -73,9 +67,3 @@ except KeyboardInterrupt:
 	GPIO.cleanup()
 
 # active,inactive,DoNotDisturb,meeting,presenting,call
-
-# camera code here ---- 
-# camera.start_preview()
-# sleep(5)
-# camera.capture('/home/pi/Desktop/image.jpg')
-# camera.stop_preview()
