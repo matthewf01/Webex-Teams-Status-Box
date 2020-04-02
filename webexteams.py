@@ -1,10 +1,15 @@
+#!/usr/bin/python
+# 2020-04-01 Matthew Fugel
+# https://github.com/matthewf01/Webex-Teams-Status-Box
 # wiring diagram for LED
 # https://www.instructables.com/id/Raspberry-Pi-3-RGB-LED-With-Using-PWM/
 
+import os
 import time
-
-# set up for RGB LEDs
+from webexteamssdk import WebexTeamsAPI
 import RPi.GPIO as GPIO
+
+# set up for RGB LEDs. Use GPIO pins referenced below when wiring:
 GPIO.setmode(GPIO.BCM)
 green=20
 red=21
@@ -17,22 +22,21 @@ RED=GPIO.PWM(red,Freq)
 GREEN=GPIO.PWM(green,Freq)
 BLUE=GPIO.PWM(blue,Freq)
 
+#if not setting personId as an environment varaible,
+#then replace the next line with api=WebexTeamsAPI(personId=____)
+api=WebexTeamsAPI()
 
-from webexteamssdk import WebexTeamsAPI
+#helpful stuff you can run if using your personal access token temporarily to test:
+# person= api.people.me()
+# print (person.status,person.displayName)
 
-#make sure to replace with a permanent bot token later
-api=WebexTeamsAPI(access_token='your_bot_token')
-
-person= api.people.me()
-print (person.status,person.displayName)
-
-
-matthew_id = "your_personId_on_webex"
-api.people.get(personId=matthew_id).status
+#pull the personId from environment variable
+mywebexid=os.environ.get('PERSON')
+api.people.get(personId=mywebexid).status
 
 try:
 	while True:
-		status = api.people.get(personId=matthew_id).status
+		status = api.people.get(personId=mywebexid).status
 		print (status)
 		if status == "active":
 			print "he's active! GREEN"
@@ -66,4 +70,4 @@ except KeyboardInterrupt:
 	BLUE.stop()	
 	GPIO.cleanup()
 
-# active,inactive,DoNotDisturb,meeting,presenting,call
+# Status codes include: active,inactive,DoNotDisturb,meeting,presenting,call
