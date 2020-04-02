@@ -1,5 +1,6 @@
 #!/bin/sh
-#2020-04-01 Matthew Fugel 
+# 2020-04-01 Matthew Fugel 
+# https://github.com/matthewf01/Webex-Teams-Status-Box/
 
 cd /home/pi/Documents
 
@@ -15,12 +16,12 @@ echo "export PERSON="$person >> mycredentials.sh
 source mycredentials.sh
 
 #download script files
-#wget https://raw.githubusercontent.com/matthewf01/Webex-Teams-Status-Box/master/cronadds
-#wget -O webexteams.py https://raw.githubusercontent.com/matthewf01/Webex-Teams-Status-Box/master/webexteams.py
+wget https://raw.githubusercontent.com/matthewf01/Webex-Teams-Status-Box/master/cronadds
+wget -O webexteams.py https://raw.githubusercontent.com/matthewf01/Webex-Teams-Status-Box/master/webexteams.py
 
 #set up the cronjob schedule using downloaded file
-#crontab -u pi /home/pi/Documents/cronadds
+crontab -u pi /home/pi/Documents/cronadds
 
 #install dependencies
-#sudo pip install webexteamssdk
+sudo pip install webexteamssdk
 
