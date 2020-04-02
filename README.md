@@ -1,7 +1,7 @@
 # Webex-Teams-Status-Box
 **Use a Raspberry Pi, Python, and the webexteamssdk and API to build an IoT "status light" reflecting your real-time presence status in Webex Teams.**
 
-In early 2020, nearly the entire world had to shift to working 100% from home due to coronavirus risks. I have a young child. My home office is part of a very "open" home design, and thus HAS NO DOOR. My family tip-toed around the office asking "are you in a meeting?" throughout the day. 
+In early 2020, nearly the entire world had to shift to working 100% from home due to coronavirus risks. I have a young child, My home has a very "open" design, and my office _HAS NO DOOR_. My family tip-toed over to my office asking "are you in a meeting?" throughout the day, not knowing if they were interrupting my workday. 
 
 As I've deployed Webex Teams for my company as our standard collaboration platform, and have already been making extensive use of the Teams API (via Powershell infact), I found a way to leverage my "status" to let my family know whether I'm _interruptable_ or not using a real-world visual indicator that could be placed somewhere in plain view.
 
