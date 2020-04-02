@@ -13,7 +13,7 @@ echo "export WEBEX_TEAMS_ACCESS_TOKEN="$accessToken >> mycredentials.sh
 echo "export PERSON="$person >> mycredentials.sh
 
 #import as environment variables now
-source mycredentials.sh
+source /home/pi/Documents/mycredentials.sh
 
 #download script files
 wget https://raw.githubusercontent.com/matthewf01/Webex-Teams-Status-Box/master/cronadds
