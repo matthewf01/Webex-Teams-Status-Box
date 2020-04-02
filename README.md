@@ -62,9 +62,9 @@ A resistor should be run between each LED leg (except 5V) and the GPIO to protec
 The setup.sh shell script performs the following:
 * Prompts you for the access token and your personId
 * Stores these credentials in a local file called mycredentials.sh
-* Downloads the script file and a scheduled task (cron) file
+* Downloads the Python script and a scheduled task (cron) file
 * Installs the webexteamssdk module via pip
-* Sets the script to run on start-up using a cron job
+* Sets the Python script to run on start-up using a cron job
 * Imports your access token and personId as an environment variable (the access token is called by the webexteamsapi behind the scenes, so you won't see it referenced in webexteams.py)
 
 ### Testing ###
