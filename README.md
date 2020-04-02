@@ -1,5 +1,5 @@
 # Webex-Teams-Status-Box
-**Use a Raspberry Pi, Python, and the webexteamssdk and API to build an IoT "status light" reflecting your real-time presence status in Webex Teams.**
+**Uses a Raspberry Pi, Python, and the webexteamssdk and API to create an IoT "status light" reflecting your real-time presence status in Webex Teams.**
 
 In early 2020, nearly the entire world had to shift to working 100% from home due to coronavirus risks. I have a young child, My home has a very "open" design, and my office _HAS NO DOOR_. My family tip-toed over to my office asking "are you in a meeting?" throughout the day, not knowing if they were interrupting my workday. 
 
@@ -39,6 +39,7 @@ Reference [this article](https://www.instructables.com/id/Raspberry-Pi-3-RGB-LED
 A resistor should be run between each LED leg (except 5V) and the GPIO to protect the LED. Red gets a different value resistor, so check that guide.
 
 ## Software Setup Instructions ##
+Actually really easy for you! I've scripted out most of the setup process to bootstrap itself into place.
 
 ### You will need 2 pieces of information to complete software setup: ###
 
@@ -59,10 +60,10 @@ A resistor should be run between each LED leg (except 5V) and the GPIO to protec
 * `wget https://raw.githubusercontent.com/matthewf01/Webex-Teams-Status-Box/master/setup.sh`
 * `sh setup.sh`
 
-The setup.sh shell script performs the following:
+The _setup.sh_ shell script I created is awesome and performs the following for you:
 * Prompts you for the access token and your personId
-* Stores these credentials in a local file called mycredentials.sh
-* Downloads the Python script and a scheduled task (cron) file
+* Stores these credentials in a local file called _mycredentials.sh_
+* Downloads the Python script (_webexteams.py_) and a scheduled task (cron) file (_cronadds_)
 * Installs the webexteamssdk module via pip
 * Sets the Python script to run on start-up using a cron job
 * Imports your access token and personId as an environment variable (the access token is called by the webexteamsapi behind the scenes, so you won't see it referenced in webexteams.py)
