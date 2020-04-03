@@ -18,7 +18,7 @@ echo "Environment=PERSON="$person >> mycredentials.txt
 source /home/pi/Documents/mycredentials.sh
 
 #download script files
-wget https://raw.githubusercontent.com/matthewf01/Webex-Teams-Status-Box/master/cronadds
+# not needed anymore wget https://raw.githubusercontent.com/matthewf01/Webex-Teams-Status-Box/master/cronadds
 wget -O webexteams.py https://raw.githubusercontent.com/matthewf01/Webex-Teams-Status-Box/master/webexteams.py
 wget https://raw.githubusercontent.com/matthewf01/Webex-Teams-Status-Box/master/webexteams.service
 
@@ -32,7 +32,7 @@ sudo systemctl daemon-reload
 sudo systemctl enable webexteams.service
 
 #set up the cronjob schedule using downloaded file
-crontab -u pi /home/pi/Documents/cronadds
+# crontab -u pi /home/pi/Documents/cronadds
 
 #install dependencies
 sudo pip install webexteamssdk
