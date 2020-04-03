@@ -5,6 +5,10 @@ In early 2020, nearly the entire world had to shift to working 100% from home du
 
 As I've deployed Webex Teams for my company as our standard collaboration platform, and have already been making extensive use of the Teams API (via Powershell infact), I found a way to leverage my "status" to let my family know whether I'm _interruptable_ or not using a real-world visual indicator that could be placed somewhere in plain view.
 
+Finished project:
+![Finished project](https://github.com/matthewf01/Webex-Teams-Status-Box/raw/master/photos/final_enclosure.jpg)
+
+Test unit on a breadboard:
 ![Unit being tested on breadboard](https://github.com/matthewf01/Webex-Teams-Status-Box/raw/master/photos/unit_on_breadboard.jpg)
 
 ### This project uses the Webex Teams SDK Python library: ###
