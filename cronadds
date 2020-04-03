@@ -1,1 +1,0 @@
-@reboot python /home/pi/Documents/webexteams.py &
