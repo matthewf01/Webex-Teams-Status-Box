@@ -66,11 +66,12 @@ Actually really easy for you! I've scripted out most of the setup process to boo
 
 The _setup.sh_ shell script I created is awesome and performs the following for you:
 * Prompts you for the access token and your personId
-* Stores these credentials in a local file called _mycredentials.sh_
-* Downloads the Python script (_webexteams.py_) and a scheduled task (cron) file (_cronadds_)
+* Stores these credentials in a local file called _mycredentials.txt_ just in case you need them later.
+* Downloads the Python script (_webexteams.py_) and a service installation file
+* Injects your credentials into the service's unit file
+* Installs the script as a service which starts at boot
 * Installs the webexteamssdk module via pip
-* Sets the Python script to run on start-up using a cron job
-* Imports your access token and personId as an environment variable (the access token is called by the webexteamsapi behind the scenes, so you won't see it referenced in webexteams.py)
+* Reboots on completion
 
 ### Testing ###
 
@@ -80,7 +81,7 @@ After a moment, you should see the status codes being returned from the Webex Te
 Verify your LED is lighting up properly at this time. Double-check that the GPIO pins you've connected match the `webexteams.py` script.
 
 ## Running the thing! ##
-The Python script has been set via cron to run at startup. You can verify the cron schedule is present by running `crontab -e`.
+The Python script has been set via systemd service to run at startup. 
 
 Restart the Raspberry Pi and confirm the script has started automatically. 
 
