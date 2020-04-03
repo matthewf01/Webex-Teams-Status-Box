@@ -1,7 +1,6 @@
 # Webex-Teams-Status-Box
 **Uses a Raspberry Pi, Python, and the webexteamssdk and API to create an IoT "status light" reflecting your real-time presence status in Webex Teams.**
 
-[![published](https://static.production.devnetcloud.com/codeexchange/assets/images/devnet-published.svg)](https://developer.cisco.com/codeexchange/github/repo/matthewf01/Webex-Teams-Status-Box)
 
 In early 2020, nearly the entire world had to shift to working 100% from home due to coronavirus risks. I have a young child, My home has a very "open" design, and my office _HAS NO DOOR_. My family tip-toed over to my office asking "are you in a meeting?" throughout the day, not knowing if they were interrupting my workday. 
 
@@ -90,3 +89,5 @@ Restart the Raspberry Pi and confirm the script has started automatically.
 **Enjoy your new Webex Teams Status light, and teach your family what the color-codes mean! Red = do not disturb me, and green = I'm working but you can come into the room.**
 
 
+
+[![published](https://static.production.devnetcloud.com/codeexchange/assets/images/devnet-published.svg)](https://developer.cisco.com/codeexchange/github/repo/matthewf01/Webex-Teams-Status-Box)
