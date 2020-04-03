@@ -1,0 +1,14 @@
+[Unit]
+Description=Webex Teams Status Light
+
+[Service]
+Environment=WEBEX_TEAMS_ACCESS_TOKEN=foo
+Environment=PERSON=bar
+ExecStart=/usr/bin/python2 /home/pi/Documents/webexteams.py
+Restart=always
+RestartSec=10s
+KillMode=process
+TimeoutSec=infinity
+
+[Install]
+WantedBy=graphical.target
