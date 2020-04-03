@@ -5,8 +5,9 @@
 cd /home/pi/Documents
 
 #retrieve user-specific values that will be written to mycredentials.sh file for storing as env variables
-read -p "Enter your WebexTeams admin token: " accessToken
-read -p "Enter the personId of the WebexTeams user you're checking status of: " person
+echo "Beginning setup. See https://github.com/matthewf01/Webex-Teams-Status-Box for setup info needed..."
+read -p "Enter your WebexTeams BOT token: " accessToken
+read -p "Enter the WebexTeams user's personId: " person
 
 #write the values out to file
 echo "---Webex Teams Credentials---" >> mycredentials.txt
@@ -18,7 +19,6 @@ echo "Environment=PERSON="$person >> mycredentials.txt
 source /home/pi/Documents/mycredentials.sh
 
 #download script files
-# not needed anymore wget https://raw.githubusercontent.com/matthewf01/Webex-Teams-Status-Box/master/cronadds
 wget -O webexteams.py https://raw.githubusercontent.com/matthewf01/Webex-Teams-Status-Box/master/webexteams.py
 wget https://raw.githubusercontent.com/matthewf01/Webex-Teams-Status-Box/master/webexteams.service
 
@@ -30,9 +30,6 @@ sed -i "s/bar/$person/" webexteams.service
 sudo mv webexteams.service /lib/systemd/system
 sudo systemctl daemon-reload
 sudo systemctl enable webexteams.service
-
-#set up the cronjob schedule using downloaded file
-# crontab -u pi /home/pi/Documents/cronadds
 
 #install dependencies
 sudo pip install webexteamssdk
