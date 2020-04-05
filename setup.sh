@@ -11,7 +11,7 @@ read -p "Enter the WebexTeams user's personId: " person
 
 #write the values out to file
 echo "---Webex Teams Credentials---" >> mycredentials.txt
-echo" ---saving here for your reference. This file is not used by the script. Creds are in /lib/systemd/system/webexteams.service.--" >> mycredentials.txt
+echo " ---saving here for your reference. This file is not used by the script. Creds are in /lib/systemd/system/webexteams.service.--" >> mycredentials.txt
 echo "Environment=WEBEX_TEAMS_ACCESS_TOKEN="$accessToken >> mycredentials.txt
 echo "Environment=PERSON="$person >> mycredentials.txt
 
