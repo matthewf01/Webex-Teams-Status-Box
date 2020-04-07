@@ -27,7 +27,7 @@ Test unit on a breadboard:
 * an SD card formatted with at least Raspbian Jessie 
   * I recommend just using [PiBakery](https://www.pibakery.org/) to pre-configure your SD card image:
   * Set your wifi network configuration, set your password, set your hostname, enable VNC on first boot 
-* * 1x RGB LED
+* 1x RGB LED
   * I'm using [this big one from Adafruit](https://www.adafruit.com/product/848) because it's big, bright, and fun. Common anode, which I understand makes a difference in how its wired. Just wire as shown.
 * Resistors, 100 ohm and 150 ohm
 * A solderless breadboard, or a soldering iron, and some wire or jumpers
