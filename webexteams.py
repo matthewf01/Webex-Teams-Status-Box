@@ -23,7 +23,7 @@ GREEN=GPIO.PWM(green,Freq)
 BLUE=GPIO.PWM(blue,Freq)
 
 #if not setting personId as an environment varaible,
-#then replace the next line with api=WebexTeamsAPI(personId=____)
+#then replace the next line with api=WebexTeamsAPI(access_token=putyourtokenhere)
 api=WebexTeamsAPI()
 
 #helpful stuff you can run if using your personal access token temporarily to test:
