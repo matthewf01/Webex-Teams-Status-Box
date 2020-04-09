@@ -4,7 +4,7 @@
 
 cd /home/pi/Documents
 
-#retrieve user-specific values that will be written to mycredentials.sh file for storing as env variables
+#retrieve user-specific values that will be written to the webexteams.service file for use with systemd
 echo "Beginning setup. See https://github.com/matthewf01/Webex-Teams-Status-Box for setup info needed..."
 read -p "Enter your WebexTeams BOT token: " accessToken
 read -p "Enter the WebexTeams user's personId: " person
