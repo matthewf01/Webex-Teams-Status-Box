@@ -86,7 +86,7 @@ The Python script has been set via systemd service to run at startup.
 
 Restart the Raspberry Pi and confirm the script has started automatically. 
 
-**Enjoy your new Webex Teams Status light, and teach your family what the color-codes mean! Red = do not disturb me, and green = I'm working but you can come into the room.**
+**Enjoy your new Webex Teams Status light, and teach your family what the color-codes mean! Red = do not disturb me, and green = I'm working but you can come into the room. Blue means inactive (so I'm not working).**
 
 
 
