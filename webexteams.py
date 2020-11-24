@@ -56,6 +56,12 @@ try:
 			RED.start(100)
 			BLUE.start(20)
 			time.sleep (180)
+		elif status == "OutOfOffice":
+			print "Out of Office - PURPLE"
+			GREEN.start(100)
+			RED.start(90)
+			BLUE.start(90)
+			time.sleep (360)
 		else:
 			print "don't bug him! RED"
 			GREEN.start(100)
